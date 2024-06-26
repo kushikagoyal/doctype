@@ -191,7 +191,12 @@ function open_add_new_item_dialog(frm) {
                 label: __('Item'),
                 fieldtype: 'Link',
                 options: 'Item',
-                reqd: 1
+                reqd: 1,
+                change: function() {
+                    frappe.db.get_value('Item', d.get_value('item'), 'item_name', function(value) {
+                        d.set_value('item_name', value.item_name);
+                    });
+                }
             },
             {
                 fieldname: 'item_name',
@@ -218,7 +223,6 @@ function open_add_new_item_dialog(frm) {
         ],
         primary_action_label: __('Add Item'),
         primary_action(values) {
-            // Add the new item to the Program Items table
             let new_item = frm.add_child('program_items', {
                 item_group: values.item_group,
                 item: values.item,
