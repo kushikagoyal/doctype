@@ -10,11 +10,11 @@ class WebFormP(Document):
 		self.notify_admin_on_creation()
 	def notify_admin_on_creation(self):
 		# admin_email = "kushikagoyal00@gmail.com"  # Replace with the actual admin email
-		subject = f"New Task added: {"self.task_description"} {"self.task_time"}"
+		subject = f"New Task added: {self.task_description} {self.task_time}"
 		message = f"""
         A new task has been created in the system:
-        Description: {"self.task_description"} 
-        time: {"self.task_time"}
+        Description: {self.task_description} 
+        time: {self.task_time}
         """
 		print(frappe.sendmail(
             recipients="kushikagoyal00@gmail.com",
