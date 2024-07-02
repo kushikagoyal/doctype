@@ -1,0 +1,47 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-06-27 15:54:01.822642",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "task_name",
+  "time_to_complete_in_hours",
+  "column_break_rrxc",
+  "task_id"
+ ],
+ "fields": [
+  {
+   "fieldname": "task_name",
+   "fieldtype": "Data",
+   "label": "Task Name"
+  },
+  {
+   "fieldname": "time_to_complete_in_hours",
+   "fieldtype": "Int",
+   "label": "Time to complete in hours"
+  },
+  {
+   "fieldname": "column_break_rrxc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "task_id",
+   "fieldtype": "Data",
+   "label": "Task ID"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-06-27 15:55:15.097909",
+ "modified_by": "Administrator",
+ "module": "Program Management",
+ "name": "NewTask",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

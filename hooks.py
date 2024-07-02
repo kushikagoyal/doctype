@@ -13,6 +13,8 @@ app_license = "mit"
 # app_include_css = "/assets/program_management/css/program_management.css"
 # app_include_js = "/assets/program_management/js/program_management.js"
 
+
+
 # include js, css files in header of web template
 # web_include_css = "/assets/program_management/css/program_management.css"
 # web_include_js = "/assets/program_management/js/program_management.js"
@@ -133,23 +135,28 @@ override_doctype_class = {
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"program_management.tasks.all"
-# 	],
-# 	"daily": [
-# 		"program_management.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"program_management.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"program_management.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"program_management.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+	# "all": [
+	# 	"program_management.tasks.all"
+	# ],
+	# "daily": [
+	# 	"program_management.tasks.daily"
+	# ],
+	# "hourly": [
+	# 	"program_management.tasks.hourly"
+	# ],
+	# "weekly": [
+	# 	"program_management.tasks.weekly"
+	# ],
+	# "monthly": [
+	# 	"program_management.tasks.monthly"
+	# ],
+	"cron": {
+        "*/30 * * * *": [
+            "program_management.program_management.doctype.myschedule.myschedule.update_counter"
+        ]
+    }
+}
 
 # Testing
 # -------
