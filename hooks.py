@@ -30,7 +30,7 @@ app_license = "mit"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-# doctype_js = {"doctype" : "public/js/doctype.js"}
+doctype_js = {"doctype" : "program_management/program/management/program_management/customization/item_sum.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -124,13 +124,22 @@ override_doctype_class = {
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+doc_events = {
+	# "*": {
+	# 	"on_update": "method",
+	# 	"on_cancel": "method",
+	# 	"on_trash": "method"
+	# }
+    "Customer":{
+        "validate": "program_management.program_management.customization.anniversary.validate"
+	},
+    "Item": {
+        "validate": "program_management.program_management.customization.item_sum.calculate_total_cost"
+    },
+    "Purchase Order": {
+        "on_submit": "program_management.program_management.customization.purchase_mail.send_notification_email"
+    }
+}
 
 # Scheduled Tasks
 # ---------------
