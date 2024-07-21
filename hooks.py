@@ -140,6 +140,10 @@ doc_events = {
         "on_submit": "program_management.program_management.customization.purchase_mail.send_notification_email"
     }
 }
+test = {
+    "test_1": "program_management/program_management/customization/test.py",
+    "test_2": "program_management/program_management/customization/test_with_data.py",
+}
 
 # Scheduled Tasks
 # ---------------
